@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:title="X"
+        android:iconTint="@color/colorWhite"
+        android:icon="@drawable/menu_icon"
+        app:showAsAction="always">
+        <menu>
+            <item
+                android:id="@+id/downloadOption"
+                android:orderInCategory="100"
+                android:title="Descargar Modelo"
+                android:icon="@drawable/download_icon"
+                app:showAsAction="never" />
+
+            <item
+                android:id="@+id/helpOption"
+                android:orderInCategory="100"
+                android:title="Ayuda"
+                android:icon="@drawable/info_icon"
+                app:showAsAction="never" />
+        </menu>
+    </item>
+</menu>
+<!--<menu xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:app="http://schemas.android.com/apk/res-auto">-->
+<!--    <item-->
+<!--        android:id="@+id/downloadOption"-->
+<!--        android:title="Descargar Modelo"-->
+<!--        app:showAsAction="never"-->
+<!--        android:icon="@android:drawable/ic_menu_gallery"-->
+<!--        >-->
+<!--    </item>-->
+
+<!--    <item-->
+<!--        android:id="@+id/helpOption"-->
+<!--        android:title="Ayuda"-->
+<!--        app:showAsAction="never"-->
+<!--        android:icon="@drawable/covid_icon"-->
+<!--        >-->
+
+<!--    </item>-->
+
+<!--</menu>-->
