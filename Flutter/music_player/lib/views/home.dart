@@ -52,31 +52,35 @@ class Home extends StatelessWidget {
                   return Container(
                     margin: const EdgeInsets.only(bottom: 4),
                     decoration: BoxDecoration(borderRadius: BorderRadius.circular(12)),
-                    child: ListTile(
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(12)
-                      ),
-                      tileColor: bgColor,
-                      title: Text(
-                        snapshot.data![index].title,
-                        style: ourStyle(family: regular, size: 15),
-                      ),
-                      subtitle: Text(
-                        "${snapshot.data![index].artist}",
-                        style: ourStyle(family: bold, size: 12),
-                      ),
-                      leading: QueryArtworkWidget(
-                        id: snapshot.data![index].id,
-                        type: ArtworkType.AUDIO,
-                        nullArtworkWidget: const Icon(
-                          Icons.music_note,
-                          color: whiteColor,
-                          size: 32,
+                    child: Obx(
+                        () => ListTile(
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(12)
                         ),
+                        tileColor: bgColor,
+                        title: Text(
+                          snapshot.data![index].title,
+                          style: ourStyle(family: regular, size: 15),
+                        ),
+                        subtitle: Text(
+                          "${snapshot.data![index].artist}",
+                          style: ourStyle(family: bold, size: 12),
+                        ),
+                        leading: QueryArtworkWidget(
+                          id: snapshot.data![index].id,
+                          type: ArtworkType.AUDIO,
+                          nullArtworkWidget: const Icon(
+                            Icons.music_note,
+                            color: whiteColor,
+                            size: 32,
+                          ),
+                        ),
+                        trailing: controller.playIndex.value == index && controller.isPlaying.value ?
+                        const Icon(Icons.play_arrow, color: whiteColor, size: 26) : null,
+                        onTap: (){
+                          controller.playSong(snapshot.data![index].uri, index);
+                        },
                       ),
-                      trailing:
-                      const Icon(Icons.play_arrow, color: whiteColor, size: 26),
-                      onTap: (){},
                     ),
                   );
                 },
